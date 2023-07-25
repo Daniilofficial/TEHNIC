@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<!-- <link rel="stylesheet" href="slider.css"> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <svg style="display: none; fill:none">
+        <symbol id="stanok" viewBox="0 0 79 83">
+            <g>
+                <path d="M13.7101 8.03815H1V81.0417H43.9327V67.2828L25.4679 48.8042V38.247L34.7693 28.9456V1H19.8512L13.7101 8.03815Z" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M34.7693 8.63156H59.941L65.8613 14.5381V21.4934H34.7693V8.63156Z" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M46.4858 21.4934V29.4286L50.1429 34.9763H55.8286L59.4995 29.4286V21.4934H46.4858Z" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M44.9399 29.2768H61.0311" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M30.3948 53.7309H63.9295C71.4644 53.7309 77.5779 59.8444 77.5779 67.3793C77.5779 74.9143 71.4644 81.0278 63.9295 81.0278H43.9329"  stroke-width="2" stroke-miterlimit="10"/>
+                <path d="M63.8879 74.2795C67.6835 74.2795 70.7605 71.1964 70.7605 67.3932C70.7605 63.59 67.6835 60.5068 63.8879 60.5068C60.0923 60.5068 57.0154 63.59 57.0154 67.3932C57.0154 71.1964 60.0923 74.2795 63.8879 74.2795Z"  stroke-miterlimit="10"/>
+                <path d="M24.1706 69.9048C25.5577 69.9048 26.6822 68.7803 26.6822 67.3932C26.6822 66.006 25.5577 64.8815 24.1706 64.8815C22.7834 64.8815 21.6589 66.006 21.6589 67.3932C21.6589 68.7803 22.7834 69.9048 24.1706 69.9048Z" stroke-miterlimit="10"/>
+                <path d="M63.8879 69.9048C65.275 69.9048 66.3995 68.7803 66.3995 67.3932C66.3995 66.006 65.275 64.8815 63.8879 64.8815C62.5007 64.8815 61.3762 66.006 61.3762 67.3932C61.3762 68.7803 62.5007 69.9048 63.8879 69.9048Z" stroke-miterlimit="10"/>
+                <path d="M24.1706 17.5741C25.5577 17.5741 26.6822 16.4496 26.6822 15.0625C26.6822 13.6753 25.5577 12.5508 24.1706 12.5508C22.7834 12.5508 21.6589 13.6753 21.6589 15.0625C21.6589 16.4496 22.7834 17.5741 24.1706 17.5741Z"  stroke-miterlimit="10"/>
+                <path d="M12.5646 69.9048C13.9518 69.9048 15.0763 68.7803 15.0763 67.3932C15.0763 66.006 13.9518 64.8815 12.5646 64.8815C11.1775 64.8815 10.053 66.006 10.053 67.3932C10.053 68.7803 11.1775 69.9048 12.5646 69.9048Z" stroke-miterlimit="10"/>
+                <path d="M57.0017 67.3932H43.9329" stroke-miterlimit="10"/>
+                <path d="M43.9327 76.2936L1 76.2936"stroke-miterlimit="10"/>
+                <path d="M9.97046 27.2481H16.4152"  stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M34.7693 15.1453H42.7109" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M9.97046 31.2088H16.4152" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M9.97046 35.1557H16.4152" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M52.9858 41.3244C51.5782 41.3244 50.4465 40.1928 50.4465 38.7852V37.833H55.525V38.7852C55.525 40.1928 54.3796 41.3244 52.9858 41.3244Z" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+        </symbol>
+        <symbol id="stanok2" viewBox="0 0 62 83">
+            <g>
+                <path d="M41.6823 52.283C41.6823 58.19 36.8983 62.9811 31 62.9811C25.1017 62.9811 20.3177 58.19 20.3177 52.283H1C1 67.372 12.1062 79.8652 26.5793 82V79.5377C26.5793 77.0876 28.5656 75.1105 31 75.1105C33.4344 75.1105 35.4207 77.0997 35.4207 79.5377V82C49.8938 79.8531 61 67.372 61 52.283H41.6823Z" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3.36182 52.283V47.88" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6.99512 52.283V47.88" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M10.6284 52.283V47.88" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M14.2617 52.283V47.88" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M17.8955 52.283V47.88" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M44.1895 52.283V47.88" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M47.8228 52.283V47.88" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M51.4563 52.283V47.88" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M55.0896 52.283V47.88" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M58.7229 52.283V47.88" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M21.3108 70.2224H24.3144" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M28.9409 70.2224H31.9324" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M36.5713 70.2224H39.5628" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M47.1863 63.5299H48.8715" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M47.1863 65.5363H48.8715" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M47.1863 67.5426H48.8715" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M47.1863 69.5489H48.8715" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12.0024 63.5299H13.6876" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12.0024 65.5363H13.6876" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12.0024 67.5426H13.6876" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12.0024 69.5489H13.6876"  stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2 56H21"  stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M41 56L61 56" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M47.1862 62.5445H43.1895V70.2224H47.1862V62.5445Z" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M17.6843 62.5445H13.6875V70.2224H17.6843V62.5445Z" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M30.9998 46.655C43.5884 46.655 53.7935 36.4348 53.7935 23.8275C53.7935 11.2202 43.5884 1 30.9998 1C18.4111 1 8.20605 11.2202 8.20605 23.8275C8.20605 36.4348 18.4111 46.655 30.9998 46.655Z" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M30.9999 41.403C40.6922 41.403 48.5493 33.5342 48.5493 23.8275C48.5493 14.1208 40.6922 6.25201 30.9999 6.25201C21.3076 6.25201 13.4504 14.1208 13.4504 23.8275C13.4504 33.5342 21.3076 41.403 30.9999 41.403Z" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M41.8884 23.8275C41.8884 17.8113 37.0196 12.9232 31.0002 12.9232C24.9809 12.9232 20.1121 17.7992 20.1121 23.8275C20.1121 27.624 22.062 30.9717 25.0051 32.9245C25.0051 32.9609 24.993 32.9973 24.993 33.0458C24.993 34.3558 26.0588 35.4232 27.3668 35.4232H34.6337C35.9417 35.4232 37.0075 34.3558 37.0075 33.0458C37.0075 33.0094 36.9954 32.9609 36.9954 32.9245C39.9506 30.9717 41.8884 27.624 41.8884 23.8275Z"  stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M31.0003 10.6467C31.711 10.6467 32.2871 10.0706 32.2871 9.35996C32.2871 8.64932 31.711 8.07324 31.0003 8.07324C30.2897 8.07324 29.7136 8.64932 29.7136 9.35996C29.7136 10.0706 30.2897 10.6467 31.0003 10.6467Z"  stroke-miterlimit="10"/>
+                <path d="M41.0001 35.8121C41.7107 35.8121 42.2868 35.2361 42.2868 34.5254C42.2868 33.8148 41.7107 33.2387 41.0001 33.2387C40.2895 33.2387 39.7134 33.8148 39.7134 34.5254C39.7134 35.2361 40.2895 35.8121 41.0001 35.8121Z"  stroke-miterlimit="10"/>
+                <path d="M21.0001 35.8121C21.7107 35.8121 22.2868 35.2361 22.2868 34.5254C22.2868 33.8148 21.7107 33.2387 21.0001 33.2387C20.2895 33.2387 19.7134 33.8148 19.7134 34.5254C19.7134 35.2361 20.2895 35.8121 21.0001 35.8121Z" stroke-miterlimit="10"/>
+            </g>
+        </symbol>
+        <symbol id="stanok3" viewBox="0 0 82 85">
+        <g>
+                <path d="M55.1527 5.66272H44.616V14.0624H55.1527V5.66272Z"  stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M71.2109 1H58.496C56.6385 1 55.1526 2.49814 55.1526 4.33293V17.3448H74.5712V4.33293C74.5543 2.49814 73.0515 1 71.2109 1Z"  stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M44.6159 2.34662H31.6814C27.5275 2.34662 24.1504 5.69638 24.1504 9.85413C24.1504 13.9951 27.5107 17.3616 31.6814 17.3616H44.6159V2.34662Z"  stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M34.383 43.1498L23.6099 25.7445C21.972 23.1017 18.7131 21.7888 15.7749 22.8324C11.7392 24.28 10.2026 28.9428 12.364 32.4272L28.5068 58.451H43.856H68.8638C71.0927 58.451 72.8826 56.6499 72.8826 54.4448V43.1498H34.383V43.1498Z" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M72.8997 75.2504L67.834 66.8507H60.0327V58.451H32.4921V66.8507H24.6908L19.6251 75.2504H11.655V83.65H80.8698V75.2504H72.8997Z"  stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M64.8619 24.4373C62.1609 24.4373 59.9895 23.057 59.9895 21.3401V20.1786H69.7343V21.3401C69.7343 23.0402 67.5629 24.4373 64.8619 24.4373Z" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M64.8621 24.4373V27.6188" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M25.4168 5.66272L12.4316 25.4752" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M33.7753 17.3448L25.8728 29.3972" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M26.9071 16.1936L21.959 23.5131" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M18.5105 42.3418C17.0921 42.8805 15.5555 43.1666 13.9514 43.1666C6.8087 43.1666 1 37.3929 1 30.2557C1 23.1185 6.79182 17.3448 13.9514 17.3448C15.1503 17.3448 16.3154 17.5131 17.4298 17.8161"stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M53.0083 39.6467H76.6821" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M64.8452 9.87097H74.5545" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M45.0295 9.87097H54.7389" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M32.4919 67.3375H60.0326" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M32.4919 63.344H60.0326" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M19.625 75.7877H72.8996" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M17.9872 31.232C19.2089 31.232 20.1992 30.2448 20.1992 29.0269C20.1992 27.8091 19.2089 26.8218 17.9872 26.8218C16.7655 26.8218 15.7751 27.8091 15.7751 29.0269C15.7751 30.2448 16.7655 31.232 17.9872 31.232Z" stroke-miterlimit="10"/>
+                <path d="M31.0565 12.0593C32.2782 12.0593 33.2686 11.072 33.2686 9.85417C33.2686 8.63632 32.2782 7.64905 31.0565 7.64905C29.8348 7.64905 28.8445 8.63632 28.8445 9.85417C28.8445 11.072 29.8348 12.0593 31.0565 12.0593Z"  stroke-miterlimit="10"/>
+                <path d="M38.6721 52.4416V58.451" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M46.1863 52.4416V58.451" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M53.7173 52.4416V58.451" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        </symbol>
+        <symbol id="stanok4" viewBox="0 0 68 86">
+            <g>
+                <path d="M1.33252 1.31421V10.5091H10.6754L13.7968 17.8736H54.5151L57.6365 10.5091H66.9794V1.31421H1.33252Z" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M49.8382 17.8736H18.4735L10.6753 27.1643L18.4735 41.4675H19.8251V52.3652H24.2337V63.2735H44.078V52.3652H48.4866V41.4675H49.8382L57.6364 27.1643L49.8382 17.8736Z" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M19.8252 41.0844H26.7117V37.8385C26.7117 33.7625 30.0477 30.4528 34.156 30.4528C38.2642 30.4528 41.6002 33.7625 41.6002 37.8385V41.0844H48.4867" stroke-width="1.3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M24.2339 51.9821H44.0781" stroke-width="1.3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M9.43115 10.1367H57.6366" stroke-width="1.3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M34.156 47.1505V51.1945" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M40.7314 47.1505V51.1945" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M27.5806 47.1505V51.1945" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M34.156 13.8295V17.8736" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M20.1577 46.7225H48.4866" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M14.9436 21.8056L52.7182 21.8056" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M24.2336 59.8366L44.0781 59.8366" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M40.7314 13.8295V17.8736" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M27.5806 13.8295V17.8736" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M39.7659 78.8644L34.1559 85.0582L28.5459 78.8644V63.2735H39.7659V78.8644Z" stroke-width="1.3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M28.5459 67.0409L39.7659 78.8645" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M39.7659 72.8235L30.7041 63.2743" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M28.5459 72.9526L36.9995 81.8609" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M46.7814 30.9802C48.0373 30.9802 49.0554 29.9701 49.0554 28.7241C49.0554 27.478 48.0373 26.4679 46.7814 26.4679C45.5254 26.4679 44.5073 27.478 44.5073 28.7241C44.5073 29.9701 45.5254 30.9802 46.7814 30.9802Z" stroke-miterlimit="10"/>
+                <path d="M21.5309 30.9802C22.7868 30.9802 23.8049 29.9701 23.8049 28.7241C23.8049 27.478 22.7868 26.4679 21.5309 26.4679C20.275 26.4679 19.2568 27.478 19.2568 28.7241C19.2568 29.9701 20.275 30.9802 21.5309 30.9802Z" stroke-miterlimit="10"/>
+            </g>
+        </symbol>
+        <symbol id="stanok5" viewBox="0 0 76 61">
+        <g>
+            <path d="M72.0396 59.05H3.42933C2.08952 59.05 1 58.0308 1 56.7604V3.30357C1 2.03312 2.08952 1 3.42933 1H72.0396C73.3794 1 74.4689 2.03312 74.4689 3.30357V56.7604C74.4689 58.0308 73.3794 59.05 72.0396 59.05Z"  stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M35.0551 9.92114H9.21582V37.5361H35.0551V9.92114Z"  stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M67.0788 9.92114H41.2395V25.4737H67.0788V9.92114Z"  stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M44.2134 18.3815H51.8547L53.651 13.3136L54.6669 22.8909L56.36 18.3815H63.7953"  stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M1 44.7539H74.4689"  stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M9.21582 53.7029H14.3837"  stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M61.7622 53.7029H66.9153"  stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M48.6309 53.7029H53.784"  stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M35.4971 53.7029H40.6502"  stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M1 48.5723L74.4687 48.5723"  stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M9.21582 33.285L35.0551 33.285"  stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M22.3491 53.7029H27.517"  stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M44.2131 37.2848C45.937 37.2848 47.3344 35.9597 47.3344 34.3251C47.3344 32.6905 45.937 31.3654 44.2131 31.3654C42.4893 31.3654 41.0918 32.6905 41.0918 34.3251C41.0918 35.9597 42.4893 37.2848 44.2131 37.2848Z"  stroke-miterlimit="10"/>
+            <path d="M44.2134 34.3251L46.4071 32.2449"  stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M54.0036 37.2848C55.7275 37.2848 57.125 35.9597 57.125 34.3251C57.125 32.6905 55.7275 31.3654 54.0036 31.3654C52.2798 31.3654 50.8823 32.6905 50.8823 34.3251C50.8823 35.9597 52.2798 37.2848 54.0036 37.2848Z"  stroke-miterlimit="10"/>
+            <path d="M54.0039 34.3251L56.2124 32.2449"  stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M63.7942 37.2848C65.518 37.2848 66.9155 35.9597 66.9155 34.3251C66.9155 32.6905 65.518 31.3654 63.7942 31.3654C62.0703 31.3654 60.6729 32.6905 60.6729 34.3251C60.6729 35.9597 62.0703 37.2848 63.7942 37.2848Z"  stroke-miterlimit="10"/>
+           </g>
+        </symbol>
+        <symbol id="stanok6" viewBox="0 0 89 42">
+        <g>
+            <path d="M57.7335 3.12653H45.2045L44.0795 1.25H39.9511V4.54733H36.0551V1.25H29.7554V7.27276L1.25 12.956V28.5579L29.7554 34.2322V40.4784H36.0551V37.181H39.9511V40.4784H44.0795L45.2045 38.6018H57.7335L62.3801 33.6514V8.07699L57.7335 3.12653Z"  stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M83.8351 11.2671V4.8869H78.2859V8.14849H62.3801V33.5799H78.2859V36.8415H83.8351V30.4702H87.2128V11.2671H83.8351Z"  stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M30.3032 7.41638V34.3848"  stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M35.4917 16.5482V4.54736"  stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M35.4917 37.4433V25.4424"  stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M40.5034 17.3792V4.54736"  stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M45.012 38.8878V3.198"  stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M57.7156 38.6018V3.198"  stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M83.2905 30.4658V11.2626"  stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M40.5034 37.1811V24.3492"  stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M37.9169 25.2165H30.3125V16.5934H37.9169C40.3028 16.5934 42.2329 18.5236 42.2329 20.9095C42.224 23.2864 40.2938 25.2165 37.9169 25.2165Z"  stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M80.4484 11.5709H76.1145V18.1298H80.4484V11.5709Z"  stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M76.0698 16.6197H70.1922C69.4706 16.6197 68.8933 15.8244 68.8933 14.8504C68.8933 13.8674 69.4771 13.0811 70.1922 13.0811H76.0698V16.6197V16.6197Z"  stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M80.4484 23.5985H76.1145V30.1574H80.4484V23.5985Z"  stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M76.0698 28.6474H70.1922C69.4706 28.6474 68.8933 27.8521 68.8933 26.8781C68.8933 25.8951 69.4771 25.1088 70.1922 25.1088H76.0698V28.6474V28.6474Z"  stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+           </g>
+        </symbol>
+        <symbol id="stanok7" viewBox="0 0 88 82">
+        <g>
+            <path d="M86.7446 58.0952V42.0993H1V58.0952H3.77403V71.8529L1 76.3777V80.9024H17.8561L21.7089 76.3777H66.026L69.8789 80.9024H86.7446V76.3777L83.9706 71.8529V58.0952H86.7446Z"  stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4.85303 35.6836H8.18572"  stroke-miterlimit="10"             stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M34.1729 24.6176H13.2231V17.7144H74.5216V24.6176H44.8356"                 stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M74.5216 17.2564V13.2719H47.2051"  stroke-miterlimit="10"             stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M31.8707 13.2719H25.1475C21.7666 13.2719 19.0215 10.5223 19.0215              7.13595C19.0215 3.7496 21.7666 1 25.1475 1H39.5378V5.92999"            stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M39.5381 30.5027V34.4776"  stroke-width="2"               stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3.77393 57.5852H83.9705"  stroke-miterlimit="10"             stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M67.4612 50.0973H86.3111"  stroke-miterlimit="10"             stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M61.1523 65.9371L63.0306 64.0558"  stroke-miterlimit="10"             stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M73.1826 65.9371L75.0609 64.0558"  stroke-miterlimit="10"             stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M64.8896 41.9063V39.726"  stroke-miterlimit="10"              stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M36.8699 41.9064V39.726"  stroke-miterlimit="10"              stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M50.875 41.9064V39.726"  stroke-miterlimit="10"               stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M37.4575 9.57678H41.6186"  stroke-miterlimit="10"             stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M37.4575 11.4196H41.6186"  stroke-miterlimit="10"             stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M37.4575 13.2719H41.6186"  stroke-miterlimit="10"             stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M22.8552 41.9063V39.726"  stroke-miterlimit="10"              stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12.1541 68.5902V63.4866"  stroke-miterlimit="10"             stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M15.1785 68.5902V63.4866"  stroke-miterlimit="10"             stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M18.2031 68.5902V63.4866"  stroke-miterlimit="10"             stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M21.2273 68.5902V63.4866"  stroke-miterlimit="10"             stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M24.2517 68.5902V63.4866"  stroke-miterlimit="10"             stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M27.2764 68.5902V63.4866"  stroke-miterlimit="10"             stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M30.3008 68.5902V63.4866"  stroke-miterlimit="10"             stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M33.3252 68.5902V63.4866"  stroke-miterlimit="10"             stroke-linecap="round" stroke-linejoin="round"/>
+           </g>
+        </symbol>
+        <symbol id="stanok8" viewBox="0 0 72 78">
+        <g>
+            <path d="M71 1H1V67H71V1Z" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M67 5H5V63H67V5Z" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M5.09668 39.5718H66.8806" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M5.09668 43.7151H66.8806" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M5.09668 14.9991H66.8806" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M5.09668 19.1424H66.8806" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M5.09668 24.9667H66.8806" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M5.09668 29.1009H66.8806" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M5.09668 9.18396H66.8806" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M11.8736 70.7749C12.0024 71.2031 12.0759 71.6586 12.0759 72.1324C12.0759 74.7017 9.97018 76.7882 7.37707 76.7882C4.78397 76.7882 2.67822 74.7109 2.67822 72.1324C2.67822 69.5631 4.78397 67.4766 7.37707 67.4766" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M18.9909 43.7151C18.9909 44.9998 17.9426 46.0384 16.6461 46.0384C15.3495 46.0384 14.3013 44.9998 14.3013 43.7151" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M57.7588 43.7151C57.7588 44.9998 56.7105 46.0384 55.4139 46.0384C54.1174 46.0384 53.0691 44.9998 53.0691 43.7151" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M18.9909 29.1009C18.9909 30.3856 17.9426 31.4242 16.6461 31.4242C15.3495 31.4242 14.3013 30.3856 14.3013 29.1009" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M57.7588 29.1009C57.7588 30.3856 56.7105 31.4242 55.4139 31.4242C54.1174 31.4242 53.0691 30.3856 53.0691 29.1009" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M18.9909 19.1425C18.9909 20.4271 17.9426 21.4658 16.6461 21.4658C15.3495 21.4658 14.3013 20.4271 14.3013 19.1425" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M57.7588 19.1425C57.7588 20.4271 56.7105 21.4658 55.4139 21.4658C54.1174 21.4658 53.0691 20.4271 53.0691 19.1425" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M18.9909 9.18396C18.9909 10.4686 17.9426 11.5073 16.6461 11.5073C15.3495 11.5073 14.3013 10.4686 14.3013 9.18396" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M57.7588 9.18396C57.7588 10.4686 56.7105 11.5073 55.4139 11.5073C54.1174 11.5073 53.0691 10.4686 53.0691 9.18396" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M7.37695 67.2671V72.1324L18.9907 67.2671H7.37695Z" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M59.193 70.7749C59.0643 71.2031 58.9907 71.6586 58.9907 72.1324C58.9907 74.7017 61.0965 76.7882 63.6896 76.7882C66.2827 76.7882 68.3884 74.7017 68.3884 72.1324C68.3884 69.5631 66.2827 67.4766 63.6896 67.4766" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M63.6896 67.2671V72.1324L52.0667 67.2671H63.6896Z" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        </symbol>
+        <symbol id="stanok9" viewBox="0 0 78 51">
+        <g>
+            <path d="M76.21 1H1V46.15H7.3V49.59H28.8V46.15H33.08V49.59H69.79V46.15H76.21V1Z" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10.8 49.59V45.97" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M13.8 49.59V45.97" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16.8 49.59V45.97" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M19.8 49.59V45.97" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M22.8 49.59V45.97" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M25.8 49.59V45.97" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M36.4399 49.59V45.97" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M39.4399 49.59V45.97" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M42.4399 49.59V45.97" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M45.4399 49.59V45.97" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M48.4399 49.59V45.97" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M51.4399 49.59V45.97" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M33.4399 35.99V32.37" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M36.4399 35.99V32.37" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M39.4399 35.99V32.37" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M42.4399 35.99V32.37" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M45.4399 35.99V32.37" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M33.4399 12.64V9.01996" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M36.4399 12.64V9.01996" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M39.4399 12.64V9.01996" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M42.4399 12.64V9.01996" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M45.4399 12.64V9.01996" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M25.9502 16.5H29.5702" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M25.9502 19.5H29.5702" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M25.9502 22.5H29.5702" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M25.9502 25.5H29.5702" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M25.9502 28.5H29.5702" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M49.3 16.5H52.92" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M49.3 19.5H52.92" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M49.3 22.5H52.92" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M49.3 25.5H52.92" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M49.3 28.5H52.92" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M54.4399 49.59V45.97" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M57.4399 49.59V45.97" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M60.4399 49.59V45.97" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M63.4399 49.59V45.97" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M66.4399 49.59V45.97" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M49.2901 12.64H29.5701V32.36H49.2901V12.64Z" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12.8 20.23C11.52 20.23 10.48 19.19 10.48 17.91V12.33C10.48 11.05 11.52 10.01 12.8 10.01C14.08 10.01 15.12 11.05 15.12 12.33V17.91C15.12 19.19 14.08 20.23 12.8 20.23Z" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M68.7501 10.01H64.1201V15.12H68.7501V10.01Z" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M68.7501 31.07H64.1201V36.18H68.7501V31.07Z" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M68.7501 20.54H64.1201V25.65H68.7501V20.54Z" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12.8 35.61C11.52 35.61 10.48 34.57 10.48 33.29V27.71C10.48 26.43 11.52 25.39 12.8 25.39C14.08 25.39 15.12 26.43 15.12 27.71V33.29C15.12 34.58 14.08 35.61 12.8 35.61Z" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        </symbol>
+        <symbol id="ellipsis" viewBox="0 -7 20 20 " width="30px" height="30px">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+            
+            <g id="SVGRepo_iconCarrier">
+            
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.5 5.5C1.11929 5.5 0 4.3807 0 3C0 1.6193 1.11929 0.5 2.5 0.5C3.88071 0.5 5 1.6193 5 3C5 4.3807 3.88071 5.5 2.5 5.5zM17.5 5.5C16.1193 5.5 15 4.3807 15 3C15 1.6193 16.1193 0.5 17.5 0.5C18.8807 0.5 20 1.6193 20 3C20 4.3807 18.8807 5.5 17.5 5.5zM10 5.5C8.6193 5.5 7.5 4.3807 7.5 3C7.5 1.6193 8.6193 0.5 10 0.5C11.3807 0.5 12.5 1.6193 12.5 3C12.5 4.3807 11.3807 5.5 10 5.5z" fill="#ffffff"/>
+            
+            </g>
+        </symbol>
+        <symbol id="bars" viewBox="0 0 18 18 " width="20px" height="30px">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+            
+            <g id="SVGRepo_iconCarrier">
+            
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 9C0 8.1716 0.67157 7.5 1.5 7.5H16.5C17.3284 7.5 18 8.1716 18 9C18 9.8284 17.3284 10.5 16.5 10.5H1.5C0.67157 10.5 0 9.8284 0 9zM0 2C0 1.17157 0.67157 0.5 1.5 0.5H16.5C17.3284 0.5 18 1.17157 18 2C18 2.82843 17.3284 3.5 16.5 3.5H1.5C0.67157 3.5 0 2.82843 0 2zM0 16C0 15.1716 0.67157 14.5 1.5 14.5H16.5C17.3284 14.5 18 15.1716 18 16C18 16.8284 17.3284 17.5 16.5 17.5H1.5C0.67157 17.5 0 16.8284 0 16z" fill="#ffffff"/>
+            
+            </g>
+        </symbol>
+        <symbol id="arrow" viewBox="0 0 24 24">
+            <g id="Complete">           
+            <g id="arrow-right">
+            <g>
+            <polyline data-name="Right" fill="none" id="Right-2" points="16.4 7 21.5 12 16.4 17"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+            
+            <line fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="2.5" x2="19.2" y1="12" y2="12"/>
+            </g>
+            </g>
+            </g>
+        </symbol>
+    </svg>
+    <!-- INFO -->
+<div class="info">
+    <div class="container">
+        <div class="info__inner">
+            <img src="img/logo.jpg" alt="" width="200" height="200">
+
+            
+            <div class="header__burger1"> 
+                <svg class="info__img">
+                    <use xlink:href="#ellipsis"></use>
+                </svg>
+
+                <form action="search" class="main__form">
+                    <input type="search" class="main__search" placeholder="Поиск">
+                    <button><img src="img/icon.svg" alt="" class="search__img">          
+                    <!-- <button class="search"><img src="img/icon.svg" alt=""><button>  -->
+                    </button>
+
+                </form>
+            <div class="header__bb">
+            <div class="info__nav">
+                <div class="info__item"><a href="#">О компании</a></div>
+                <div class="info__item"><a href="#">Новости</a></div>
+                <div class="info__item"><a href="#">Оплата и доставка</a></div>
+                <div class="info__item"><a href="#">Контакты</a></div>
+                <div class="num">8 800 511 02 67</div>
+            </div><!--info__nav-->
+            </div><!--header__bb-->
+            </div><!--header__burger-->
+        </div><!--info__inner-->
+    </div><!--container-->
+</div><!--info-->
+
+<!-- HEADER -->
+<header class="header">
+    <nav class="nav">
+    <div class="container">
+      <div class="header__container">
+        <div class="header__burger"><span></span>
+            <svg class="info__img1">
+                <use xlink:href="#bars"></use>
+             </svg>
+            <div class="header__menu">
+                <div class="nav__inner">
+                    <div class="item">
+                        <div class="nav__item one"><img src="img/Group.png"      alt="">Каталог продукции</div>
+                           <div class="content">
+                               <a href="#" class="content__link">Станочная оснастка</a>
+                               <a href="#" class="content__link">Комплектующие для станков</a>
+                               <a href="#" class="content__link">Промышленное оборудование</a>
+                               <a href="#" class="content__link">Инструменты</a>
+                               <a href="#" class="content__link">Приборы для контроля точности</a>
+                               <a href="#" class="content__link">Расходные материалы</a>
+                               <a href="#" class="content__link">станки</a>
+                               <a href="#" class="content__link">Средства хранения и мебель</a>
+                           </div><!--content-->
+                    </div><!--ITEM-->
+                    <div class="item two">
+                        <div class="nav__item two">подбор по производителю</div>
+                        <div class="content two">
+                            <a href="#" class="content__link">Станочная оснастка2</a>
+                            <a href="#" class="content__link">Комплектующие для станков</a>
+                            <a href="#" class="content__link">Промышленное оборудование</a>
+                            <a href="#" class="content__link">Инструменты</a>
+                            <a href="#" class="content__link">Приборы для контроля точности</a>
+                            <a href="#" class="content__link">Расходные материалы</a>
+                            <a href="#" class="content__link">станки</a>
+                            <a href="#" class="content__link">Средства хранения и мебель</a>
+                        </div><!--content-->
+                    </div>
+                <div class="item three">
+                    <div class="nav__item three">Модернизация</div>
+                    <div class="content three">
+                        <a href="#" class="content__link">Станочная оснастка3</a>
+                        <a href="#" class="content__link">Комплектующие для станков</a>
+                        <a href="#" class="content__link">Промышленное оборудование</a>
+                        <a href="#" class="content__link">Инструменты</a>
+                        <a href="#" class="content__link">Приборы для контроля точности</a>
+                        <a href="#" class="content__link">Расходные материалы</a>
+                        <a href="#" class="content__link">станки</a>
+                        <a href="#" class="content__link">Средства хранения и мебель</a>
+                    </div><!--content-->
+                </div>
+                <div class="item four">
+                    <div class="nav__item four">мониторинг</div>
+                    <div class="content four">
+                        <a href="#" class="content__link">Комплектующие для станков</a>
+                        <a href="#" class="content__link">Промышленное оборудование</a>
+                        <a href="#" class="content__link">Инструменты</a>
+                        <a href="#" class="content__link">Приборы для контроля точности</a>
+                        <a href="#" class="content__link">Расходные материалы</a>
+                        <a href="#" class="content__link">станки</a>
+                        <a href="#" class="content__link">Средства хранения и мебель</a>
+                    </div>
+                </div>
+                <div class="item five">
+                    <div class="nav__item five">ремонт</div>
+                    <div class="content five">
+                        <a href="#" class="content__link">Комплектующие для станков5</a>
+                        <a href="#" class="content__link">Промышленное оборудование</a>
+                        <a href="#" class="content__link">Инструменты</a>
+                        <a href="#" class="content__link">Приборы для контроля точности</a>
+                        <a href="#" class="content__link">Расходные материалы</a>
+                        <a href="#" class="content__link">станки</a>
+                        <a href="#" class="content__link">Средства хранения и мебель</a>
+                    </div>
+                </div>
+                <form action="search">
+                    <input type="search" placeholder="Поиск">
+                    <button class="search"><img src="img/icon.svg" alt=""><button> 
+                </form>
+            </div><!--nav__inner-->
+            </div><!--header-menu-->
+        </div><!--header-burger-->
+    </div><!---->
+
+
+            <div class="header__title">
+                Комплетующие, модернизация оборудования и системы мониторинга
+            </div>
+            <a href="" class="btn btn__text">перейти к каталогу</a>
+
+
+        </nav><!--nav-->
+        <!-- <div class="header__inner"> -->
+            <div class="container">
+            </div><!--container-->
+        <!-- </div>header__inner -->
+</header><!--header-->
+
+<!-- CATALOG -->
+<div class="catalog" >
+    <div class="container">
+        <div class="catalog__inner">
+            <a class="catalog__item" href="#">
+                <svg class="main__img">
+                    <use xlink:href="#stanok"></use>
+                </svg>
+                <div class="catalog__text">Станочная оснастка                
+                    <svg class="arrow">
+                    <use xlink:href="#arrow"></use>
+                </svg></div>
+            </a>
+            <a class="catalog__item" href="#">
+                <svg class="main__img">
+                    <use xlink:href="#stanok2"></use>
+                </svg>
+                <div class="catalog__text" >Комплектующие для станков
+                    <svg class="arrow">
+                        <use xlink:href="#arrow"></use>
+                    </svg>
+                </div>
+            </a>
+            <a class="catalog__item" href="#">
+                <svg class="main__img">
+                    <use xlink:href="#stanok3"></use>
+                </svg>
+                <div class="catalog__text">Промышленное оборудование
+                    <svg class="arrow">
+                        <use xlink:href="#arrow"></use>
+                    </svg>
+                </div>
+            </a>
+            <a class="catalog__item" href="#">
+                <svg class="main__img">
+                    <use xlink:href="#stanok4"></use>
+                </svg>
+                <div class="catalog__text">Инструменты
+                    <svg class="arrow">
+                        <use xlink:href="#arrow"></use>
+                    </svg>
+                </div>
+            </a>
+            <a class="catalog__item" href="#">
+                <svg class="main__img">
+                    <use xlink:href="#stanok5"></use>
+                </svg>
+                <div class="catalog__text text5">Приборы для контроля   точности
+                <svg class="arrow">
+                        <use xlink:href="#arrow"></use>
+                    </svg>
+                </div>
+            </a>
+            <a class="catalog__item" href="#">
+                <svg class="main__img">
+                    <use xlink:href="#stanok6"></use>
+                </svg>
+                <div class="catalog__text">Расходные материалы
+                    <svg class="arrow">
+                        <use xlink:href="#arrow"></use>
+                    </svg>
+                </div>
+            </a>
+            <a class="catalog__item" href="#">
+                <svg class="main__img">
+                    <use xlink:href="#stanok7"></use>
+                </svg>
+                <div class="catalog__text">Станки
+                    <svg class="arrow">
+                        <use xlink:href="#arrow"></use>
+                    </svg>
+                </div>
+            </a>
+            <a class="catalog__item" href="#">
+                <svg class="main__img">
+                    <use xlink:href="#stanok8"></use>
+                </svg>
+                <div class="catalog__text">Средства хранения и мебель
+                    <svg class="arrow">
+                        <use xlink:href="#arrow"></use>
+                    </svg>
+                </div>
+            </a>
+            <a class="catalog__item" href="#">
+                <svg class="main__img">
+                    <use xlink:href="#stanok9"></use>
+                </svg>
+                <div class="catalog__text">Средства малой модернизации
+                    <svg class="arrow">
+                        <use xlink:href="#arrow"></use>
+                    </svg>
+                </div>
+            </a>
+        </div><!--catalog__inner-->
+    </div><!--container-->
+</div><!--catalog-->
+
+
+<!-- ABout -->
+<div class="about">
+    <div class="container">
+        <h5>Eloboration</h5>
+        <div class="about__inner">
+            <div class="about__first">
+                <h2 class="about__title">Бесперебойные поставки и модернизация комплектующих для вашего производства</h2>
+                <p class="about__text">Мы компания, которая сосредоточена на услугах модернизации электронных систем управления, интегрированных в станки с ЧПУ и другого оборудования промышленного назначения. Мы также разрабатываем и поставляем устройства для диагностики и ремонта промышленных электронных устройств.</p>
+                <div class="about__form">
+                    <a href="#" class="about__link">подробнее о компании</a>
+                    <svg class="arrow">
+                        <use xlink:href="#arrow"></use>
+                    </svg>
+                </div>
+            </div>
+            <div class="about__second">
+                <div class="about__texts">
+                    предоставляем эффективные решения исходя из поставленных нужд
+                </div>
+                <div class="about__texts">
+                    Исключительно профессиональная и информативная поддержка всех наших клиентов
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- PARTNERS -->
+<div class="partners">
+    <div class="container">
+        <h4 class="partners__small__title">поставка оборудования</h4>
+        <h1 class="partners__title">Только проверенные производители</h1>
+
+        <div class="partners__inner">
+            <div class="partners__item">
+                <img src="img/partners/partners1.jpg" alt="" class="partners__img">
+                <div class="partners__text">Японская компания, являющаяся одним из ведущих мировых производителей оборудования для промышленной автоматизации.</div>
+            </div>
+            <div class="partners__item">
+                <img src="img/partners/partners2.jpg" alt="" class="partners__img">
+                <div class="partners__text">Более чем полувековые, традиции создания, изготовления и внедрения прецизионных метрологических устройств.</div>
+            </div>
+            <div class="partners__item">
+                <img src="img/partners/partners3.jpg" alt="" class="partners__img">
+                <div class="partners__text">Разрабатывает и производит датчики измерения и индикации для систем ЧПУ, требующих высокой точности.</div>
+            </div>
+            <div class="partners__item">
+                <img src="img/partners/partners4.jpg" alt="" class="partners__img">
+                <div class="partners__text">Немецкий концерн, работающий в области электротехники, электроники, энергетического оборудования и СЧПУ.</div>
+            </div>
+        </div>
+        <a href="" class="btn2">сделать подбор по производителю</a>
+    </div>
+</div>
+
+<!--ADD-->
+<div class="add">
+    <div class="container">
+        <h5 class="add__title">услуги от нас</h5>
+        <div class="add__inner">
+            <div class="add__main__title">Модернизация оборудования,системы мониторинга и ремонт</div>
+            <div class="add__text">Услуги по модернизации электронных систем управления, а так же мониторинг станков и роботов являются главным профилем обслуживания наших постоянных клиентов.</div>
+        </div><!--add__inner-->
+    </div><!--container-->
+
+</div><!--add-->
+
+<div class="wrapper">
+<div class="container">
+    <div class="image-slider swiper-container">
+
+        <div class="image-slider__wrapper swiper-wrapper">
+
+            <div class="image-slider__slide swiper-slide">
+                <div class="image-slider__image">
+                    <img src="img/slider/img1.jpg" alt="">
+                    <div class="slider__date">1 янв 2019</div>
+                    <div class="slider__title">Семинар Heidenhain в Брянске</div>
+                    <div class="slider__text">Более чем полувековые, традиции создания, изготовления и внедрения прецизионных метрологических устройств ..</div>
+                </div>  
+            </div>
+
+            <div class="image-slider__slide swiper-slide">
+                <div class="image-slider__image">
+                    <img src="img/slider/img2.jpg" alt="">
+                    <div class="slider__date">2 янв 2019</div>
+                    <div class="slider__title">Выставка «Металлообработка- 2019. Оборудование, приборы ..</div>
+                    <div class="slider__text">Более чем полувековые, традиции создания, изготовления и внедрения прецизионных ..</div>
+                </div>
+            </div>
+            
+            <div class="image-slider__slide swiper-slide">
+                <div class="image-slider__image">
+                    <img src="img/slider/img3.jpg" alt="">
+                    <div class="slider__date">23 фев 2019</div>
+                    <div class="slider__title">Модернизация в Байконуре</div>
+                    <div class="slider__text">Более чем полувековые, традиции создания, изготовления и внедрения прецизионных метрологических устройств ..</div>
+                </div>
+            </div>
+
+            <div class="image-slider__slide swiper-slide">
+                <div class="image-slider__image">
+                    <img src="img/slider/img1.jpg" alt="">
+                    <div class="slider__date">1 янв 2019</div>
+                    <div class="slider__title">Семинар Heidenhain в Брянске</div>
+                    <div class="slider__text">Более чем полувековые, традиции создания, изготовления и внедрения прецизионных метрологических устройств ..</div>
+                </div>  
+            </div>
+
+            <div class="image-slider__slide swiper-slide">
+                <div class="image-slider__image">
+                    <img src="img/slider/img2.jpg" alt="">
+                    <div class="slider__date">2 янв 2019</div>
+                    <div class="slider__title">Выставка «Металлообработка- 2019. Оборудование, приборы ..</div>
+                    <div class="slider__text">Более чем полувековые, традиции создания, изготовления и внедрения прецизионных ..</div>
+                </div>
+            </div>
+            
+            <div class="image-slider__slide swiper-slide">
+                <div class="image-slider__image">
+                    <img src="img/slider/img3.jpg" alt="">
+                    <div class="slider__date">23 фев 2019</div>
+                    <div class="slider__title">Модернизация в Байконуре</div>
+                    <div class="slider__text">Более чем полувековые, традиции создания, изготовления и внедрения прецизионных метрологических устройств ..</div>
+                </div>
+            </div>
+            
+            
+            
+        </div><!--swiper-wrapper-->
+    </div><!--swiper-container-->
+    <!-- <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div> -->
+    <div class="swiper-pagination"></div>
+    <div class="swiper-scrollbar"></div>
+</div>
+</div> <!--wrapper-->
+    
+<!--SEO-->
+<div class="seo">
+    <div class="container">
+        <div class="seo__inner">
+            <div class="seo__first">
+                <h2>Мы — это решение конкретных задач</h2>
+                <p>Исключительно профессиональная и информативная поддержка всех наших клиентов</p>
+            </div>
+            <div class="seo__second">
+                <h1>Заголовок для SEO</h1>
+                <p>Некоторые компоненты образуют единую связку. Шаговый двигатель, драйвер, блок питания для привода – пример такой связки, в которой комплектующие должны соответствовать друг другу. Шпиндель и частотный преобразователь, винты и гайки в ШВП, зубчатая рейка и шестерня – то же самое. При замене одной запчасти в такой связке выбор делается, исходя из характеристик остальных используемых комплектующих.</p>
+                <p>
+                    При покупке одной конкретной запчасти электромеханической группы лучше предоставить продавцу документацию на остальные компоненты связки, при замене запчастей в механике следует стремиться как минимум к тому, чтобы у них был один производитель. Для простейших комплектующих (термореле, концевые датчики, приводные ремни, радиальные и упорные подшипники для роторов шпинделя и приводов) в силу узкого набора базовых характеристик делается исключение.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer__inner">
+            <h1 class="footer__title">Нужна консультация?</h1>
+            <div class="footer__text">Вы можете связаться с нами по номеру телефона либо оставить заявку и мы свяжемся с вами в течении 10 минут...</div>
+    
+            <div class="button__inner">
+                <div class="btn__table">
+                    <span>пн-сб 08:00 - 18:00</span>
+                    <h2>1 234  88 88</h2>
+                </div>
+                <a href="#" class="btn__main">заказать обратный звонок</a>
+            </div>
+
+        </div>
+    </div>
+</footer>   
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="js.js"></script>
+</body>
+</html>
